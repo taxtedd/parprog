@@ -1,6 +1,7 @@
 #include <iostream>
 #include <pthread.h>
 #include <algorithm>
+#include <random>
 
 #define NUM_THREADS 4
 
@@ -71,8 +72,12 @@ void one_thread_search() {
 }
 
 int main() {
+  std::random_device rd;
+  std::mt19937 gen(rd());
+  std::uniform_int_distribution<> dist(1,100);
+
   for (long long i = 0; i < array_size; ++i) {
-    array[i] = 1 + std::rand() % 100;
+    array[i] = dist(gen);
   }
 
   clock_t start, end;
