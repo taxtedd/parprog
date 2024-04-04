@@ -4,7 +4,7 @@
 
 #define NUM_THREADS 4
 
-const int array_size = 10;
+const int array_size = 150000;
 int array[array_size];
 int array2[array_size];
 int part = 0;
